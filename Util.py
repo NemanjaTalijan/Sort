@@ -3,28 +3,30 @@ import random
 class Array:
 
     def __init__(self):
-        self.Array = []
+        self.array = []
 
     def makeRandArray(self,len):
-        for ele in range(0,int(len)):
-            self.Array.append(ele)
+        for ele in range(random.randrange(0,100)):
+            self.array.append(ele)
 
     def sortArray(self):
         b = 0
         a = 0
-        end = len(self.rand_list)
-        while end != 2:
+        end = len(self.array)
+        for end in range(end,1,-1):
             print(end)
-            for ele in range (a + 1,end):
-                if self.rand_list[ele] > self.rand_list[ele + 1]:
-                    b = self.rand_list[ele]
-                    self.rand_list[ele] = self.rand_list[ele + 1]
-                    self.rand_list[ele + 1] = b
+            for ele in range(a,end-1):
+                if self.array[ele] > self.array[ele + 1]:
+                    b = self.array[ele]
+                    self.array[ele] = self.array[ele + 1]
+                    self.array[ele + 1] = b
                 else:
                     continue
             a = 0
             b = 0
-            end -= 1
 
+    def printRandArray(self):
+        print("Start array: ",self.array)
+            
     def printSortedRandArray(self):
         print(self.Array)
